@@ -19,7 +19,7 @@ export default function Page() {
           prefetch={false}
         >
           <RocketIcon className="size-6" />
-          <span className="sr-only">Init Web</span>
+          <span className="sr-only">Pregunta.do</span>
         </Link>
         <nav className="ml-auto flex gap-1 sm:gap-2">
           <SignedIn>
@@ -44,7 +44,7 @@ export default function Page() {
         <section className="w-full pt-12 md:pt-24 lg:pt-32">
           <div className="container mx-auto space-y-10 xl:space-y-16">
             <div className="flex flex-col items-center gap-4 text-center">
-              <TypographyH1>Init Web</TypographyH1>
+              <TypographyH1>Pregunta.do</TypographyH1>
 
               <TypographyLead className="max-w-2xl">
                 This is a web app inside the Init monorepo template. Here you

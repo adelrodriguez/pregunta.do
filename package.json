@@ -1,5 +1,5 @@
 {
-  "name": "init",
+  "name": "pregunta.do",
   "private": true,
   "scripts": {
     "build": "turbo build",
