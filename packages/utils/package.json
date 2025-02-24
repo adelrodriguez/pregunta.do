@@ -1,0 +1,41 @@
+{
+  "name": "@this/utils",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": [
+      "./src/helpers/*.ts",
+      "./src/helpers/*.tsx"
+    ],
+    "./constants": "./src/constants/index.ts"
+  },
+  "scripts": {
+    "check": "biome check --write .",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "format": "biome format --write .",
+    "lint": "biome lint --fix .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@trpc/client": "11.0.0-rc.768",
+    "@trpc/react-query": "11.0.0-rc.768",
+    "clsx": "2.1.1",
+    "lodash.merge": "4.6.2",
+    "nanoid": "5.1.0",
+    "schema-dts": "1.1.2",
+    "superjson": "catalog:",
+    "tailwind-merge": "3.0.1",
+    "tailwind-merge2": "npm:tailwind-merge@2.6.0",
+    "zod": "3.24.2"
+  },
+  "devDependencies": {
+    "@tooling/tsconfig": "workspace:*",
+    "@trpc/server": "11.0.0-rc.768",
+    "@types/lodash.merge": "4.6.9",
+    "next": "catalog:",
+    "typescript": "catalog:"
+  }
+}

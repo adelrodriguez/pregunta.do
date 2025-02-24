@@ -1,0 +1,43 @@
+{
+  "name": "docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "analyze": "ANALYZE=true next build",
+    "build": "next build",
+    "check": "biome check --write .",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "next dev --port 3005",
+    "format": "biome format --write .",
+    "fumadocs": "fumadocs",
+    "postinstall": "fumadocs-mdx",
+    "lint": "biome lint --fix .",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "catalog:",
+    "@this/analytics": "workspace:*",
+    "@this/env": "workspace:*",
+    "@this/observability": "workspace:*",
+    "@this/utils": "workspace:*",
+    "fumadocs-core": "15.0.7",
+    "fumadocs-mdx": "11.5.4",
+    "fumadocs-ui": "15.0.7",
+    "next": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@fumadocs/cli": "0.0.8",
+    "@tailwindcss/postcss": "catalog:",
+    "@tooling/tsconfig": "workspace:*",
+    "@types/mdx": "2.0.13",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "postcss": "catalog:",
+    "tailwindcss": "catalog:tailwind4",
+    "typescript": "catalog:"
+  }
+}

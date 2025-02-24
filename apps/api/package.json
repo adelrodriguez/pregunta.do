@@ -1,0 +1,47 @@
+{
+  "name": "api",
+  "exports": {
+    "./client": {
+      "import": {
+        "types": "./dist/client.d.ts"
+      }
+    }
+  },
+  "scripts": {
+    "build:types": "tsup src/client.ts --dts-only",
+    "build:types:watch": "pnpm run build:types --watch",
+    "check": "biome check --write .",
+    "clean": "git clean -xdf .cache .turbo .wrangler dist node_modules",
+    "deploy": "wrangler deploy --minify --env production",
+    "deploy:dry-run": "wrangler deploy --dry-run --outdir ./dist",
+    "dev": "wrangler dev --port 3001 --env development",
+    "format": "biome format --write .",
+    "lint": "biome lint --fix .",
+    "postinstall": "pnpm run typegen:cloudflare && pnpm run build:types",
+    "typecheck": "tsc --noEmit",
+    "typegen:cloudflare": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/trpc-server": "0.3.4",
+    "@hono/zod-validator": "0.4.3",
+    "@this/auth": "workspace:*",
+    "@this/db": "workspace:*",
+    "@this/email": "workspace:*",
+    "@this/env": "workspace:*",
+    "@this/kv": "workspace:*",
+    "@this/observability": "workspace:*",
+    "@this/queue": "workspace:*",
+    "@this/utils": "workspace:*",
+    "@trpc/server": "11.0.0-rc.768",
+    "hono": "catalog:",
+    "pino": "catalog:",
+    "superjson": "catalog:"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20250214.0",
+    "@tooling/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "wrangler": "3.109.1"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "@this/observability",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./error": "./src/error/index.ts",
+    "./error/*": "./src/error/*.ts",
+    "./error/nextjs": "./src/error/nextjs/index.ts",
+    "./error/nextjs/*": "./src/error/nextjs/*.ts",
+    "./logger": "./src/logger/index.ts",
+    "./logger/*": "./src/logger/*.ts",
+    "./uptime": "./src/uptime.ts"
+  },
+  "scripts": {
+    "check": "biome check --write .",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "format": "biome format --write .",
+    "lint": "biome lint --fix .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@openstatus/react": "^0.0.3",
+    "@sentry/browser": "9.1.0",
+    "@sentry/cloudflare": "9.1.0",
+    "@sentry/nextjs": "9.1.0",
+    "@this/env": "workspace:*",
+    "@this/utils": "workspace:*",
+    "chalk": "5.4.1",
+    "http-status-codes": "2.3.0",
+    "pino": "catalog:",
+    "pino-pretty": "13.0.0"
+  },
+  "devDependencies": {
+    "@tooling/tsconfig": "workspace:*",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@sentry/react-native": "catalog:",
+    "@vercel/functions": "catalog:",
+    "next": "catalog:",
+    "next-axiom": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "@sentry/react-native": {
+      "optional": true
+    },
+    "@vercel/functions": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "next-axiom": {
+      "optional": true
+    }
+  }
+}

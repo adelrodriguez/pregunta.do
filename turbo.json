@@ -1,0 +1,57 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "AXIOM_DATASET",
+    "AXIOM_TOKEN",
+
+    "BETTER_AUTH_BASE_PATH",
+    "BETTER_AUTH_SECRET",
+    "BETTER_AUTH_TRUSTED_ORIGINS",
+    "BETTER_AUTH_URL",
+
+    "DATABASE_URL",
+    "DATABASE_AUTH_TOKEN",
+
+    "EMAIL_FROM",
+
+    "GITHUB_CLIENT_ID",
+    "GITHUB_CLIENT_SECRET",
+
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+
+    "QSTASH_CURRENT_SIGNING_KEY",
+    "QSTASH_NEXT_SIGNING_KEY",
+    "QSTASH_TOKEN",
+    "QSTASH_URL",
+
+    "RESEND_API_KEY",
+
+    "SENTRY_AUTH_TOKEN",
+    "SENTRY_DSN",
+    "SENTRY_ORG",
+    "SENTRY_PROJECT",
+
+    "UPSTASH_REDIS_REST_TOKEN",
+    "UPSTASH_REDIS_REST_URL"
+  ],
+  "globalPassThroughEnv": ["NODE_ENV", "CI"],
+  "tasks": {
+    "build": {},
+    "check": {
+      "dependsOn": ["^check"]
+    },
+    "clean": {
+      "cache": false,
+      "dependsOn": ["^clean"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "format": {},
+    "lint": {},
+    "typecheck": {}
+  },
+  "ui": "tui"
+}

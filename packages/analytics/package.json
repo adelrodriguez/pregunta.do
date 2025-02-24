@@ -1,0 +1,44 @@
+{
+  "name": "@this/analytics",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./plausible/nextjs": "./src/plausible/nextjs.ts",
+    "./posthog/client": "./src/posthog/client.ts",
+    "./posthog/nextjs": "./src/posthog/nextjs/index.ts",
+    "./posthog/nextjs/*": "./src/posthog/nextjs/*.ts",
+    "./posthog/expo": "./src/posthog/expo.tsx",
+    "./posthog/server": "./src/posthog/server.ts"
+  },
+  "scripts": {
+    "check": "biome check --write .",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "format": "biome format --write .",
+    "lint": "biome lint --fix .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@this/env": "workspace:*",
+    "next-plausible": "3.12.4",
+    "posthog-js": "1.218.2",
+    "posthog-node": "4.6.0",
+    "posthog-react-native": "3.9.1"
+  },
+  "devDependencies": {
+    "@tooling/tsconfig": "workspace:*",
+    "@types/react": "catalog:",
+    "next": "catalog:",
+    "react": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}
